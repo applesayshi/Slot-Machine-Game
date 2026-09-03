@@ -4,8 +4,8 @@ A three-reel slot machine in Python, with two front-ends sharing one set of rule
 
 | File | What it is |
 | --- | --- |
-| `slot_core.py` | The rules: symbol counts, payouts, the spin, and the win check. No display code. |
-| `slot_machine.py` | The original text version that prints the reels to the terminal. |
+| `slot_core.py` | The rules: symbol counts, payouts, the spin, and the win check. |
+| `slot_machine.py` | The functions/information of the game. Also includes the main function.  |
 | `slot_machine_gui.py` | A drawn cabinet with colour, fruit symbols and reels that spin. |
 
 Both front-ends import `slot_core`, so the odds and payouts can never drift apart.
