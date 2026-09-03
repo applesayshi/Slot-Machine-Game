@@ -1,9 +1,5 @@
 """A graphical slot machine built on top of the original console game.
 
-Same rules, same odds, same payouts as slot_machine.py -- all of that lives in
-slot_core.py and is imported here. This file is purely the face of the machine:
-a drawn cabinet, colourful fruit symbols and reels that actually spin.
-
 Run with:  python3 slot_machine_gui.py     (needs: pip install pygame)
 
 Controls
