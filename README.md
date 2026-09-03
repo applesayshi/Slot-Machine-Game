@@ -1,4 +1,4 @@
-# Lucky Sevens — Slot Machine
+# Slot Machine (Lucky 7)
 
 A three-reel slot machine in Python, with two front-ends sharing one set of rules.
 
