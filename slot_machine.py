@@ -14,6 +14,8 @@ from slot_core import (
 
 
 # Transposing the matrix
+# This function takes an inline version of the columns and rows (for example: [[], [], []], and prints it out into the column format
+# Basically it says: print the first element of each columns, and repeat for the 2nd element, and 3rd element. 
 def print_slot_machine(columns):
     for row in range(len(columns[0])):
         for i, column in enumerate(columns):
@@ -41,6 +43,7 @@ def deposit():
 
 
 # Takes user input for number of lines to bet on
+# Lines in this game are build top to bottom. So 1 line means only winning the top, 2 lines means top 2, 3 means top 3. User does not get to pick which line. 
 def get_number_of_lines():
     while True:
         lines = input("Enter the number of lines to bet on (1-" + str(MAX_LINES) + ")? ")
@@ -55,7 +58,7 @@ def get_number_of_lines():
             print("Please enter a number")
     return lines
 
-
+# Simply gets the amount that person wants to bet per line
 def get_bet():
     while True:
         bet = input("What would you like to bet on each line? $")
@@ -70,7 +73,7 @@ def get_bet():
 
     return bet
 
-
+# Balance, and also checks if user can bet specified amount. # of lines * bet gives total bet
 def spin(balance):
     lines = get_number_of_lines()
     # Check if user can afford the bet
