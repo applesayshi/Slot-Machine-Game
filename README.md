@@ -48,16 +48,3 @@ a seven turns up far less often than a lemon.
 
 The buttons on the control deck do the same things if you would rather click.
 
-## Notes on the graphical version
-
-Everything on screen is drawn in code — there are no image or sound files. The
-symbols are vector shapes rendered at 3× and scaled down for smooth edges, and
-the effects are short waveforms synthesised at start-up. If the machine has no
-audio device the game runs silently rather than failing.
-
-The reels are a strip of symbols scrolled by a floating point index. When a
-column is asked to stop, the result is written into the strip a few tiles ahead
-of the window and the reel eases onto it, so it lands on the real outcome
-without anything visibly popping into place. The columns stop left to right, and
-if the first two already match on a line you paid for, the last one hangs a
-moment longer.
