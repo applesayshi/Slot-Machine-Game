@@ -1,2 +1,63 @@
-# Slot-Machine-Game
-Simple project recreating a slot machine commonly seen in Casinos
+# Lucky Sevens — Slot Machine
+
+A three-reel slot machine in Python, with two front-ends sharing one set of rules.
+
+| File | What it is |
+| --- | --- |
+| `slot_core.py` | The rules: symbol counts, payouts, the spin, and the win check. No display code. |
+| `slot_machine.py` | The original text version that prints the reels to the terminal. |
+| `slot_machine_gui.py` | A drawn cabinet with colour, fruit symbols and reels that spin. |
+
+Both front-ends import `slot_core`, so the odds and payouts can never drift apart.
+
+## Running it
+
+```bash
+python3 slot_machine.py            # the console version, no dependencies
+
+pip install -r requirements.txt    # pygame, for the graphical version
+python3 slot_machine_gui.py
+```
+
+## Playing
+
+Insert an amount, pick how many lines to bet on and how much to stake on each
+one, then pull the lever. A line pays when all three reels show the same symbol
+on it. Lines are counted from the top: 1 line means the top row, 2 the top two,
+3 all of them.
+
+| Symbol | Per reel | Pays |
+| --- | --- | --- |
+| Seven | 2 | 7 × bet per line |
+| Bell | 4 | 6 × bet per line |
+| Cherry | 6 | 5 × bet per line |
+| Lemon | 8 | 4 × bet per line |
+
+Rarer symbols pay more: each reel is filled from the same pool of 20 symbols, so
+a seven turns up far less often than a lemon.
+
+## Controls (graphical version)
+
+| Key | Action |
+| --- | --- |
+| `SPACE` / `ENTER` | Spin (or click **SPIN**, or the lever) |
+| `UP` / `DOWN` | Change the number of lines |
+| `LEFT` / `RIGHT` | Change the bet per line (hold `SHIFT` for ±10) |
+| `M` | Mute |
+| `Q` / `ESC` | Cash out |
+
+The buttons on the control deck do the same things if you would rather click.
+
+## Notes on the graphical version
+
+Everything on screen is drawn in code — there are no image or sound files. The
+symbols are vector shapes rendered at 3× and scaled down for smooth edges, and
+the effects are short waveforms synthesised at start-up. If the machine has no
+audio device the game runs silently rather than failing.
+
+The reels are a strip of symbols scrolled by a floating point index. When a
+column is asked to stop, the result is written into the strip a few tiles ahead
+of the window and the reel eases onto it, so it lands on the real outcome
+without anything visibly popping into place. The columns stop left to right, and
+if the first two already match on a line you paid for, the last one hangs a
+moment longer.
