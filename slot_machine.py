@@ -106,6 +106,6 @@ def main():
 
     print(f"You left with ${balance}")
 
-
+# This is a guard. Without this guard, python may run this file on importing from another file, which is not what we want. When Python initializes __name__, but its imported from another class, it wont be == to __main__, so this wont run. 
 if __name__ == "__main__":
     main()
