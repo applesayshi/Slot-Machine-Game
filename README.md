@@ -1,6 +1,7 @@
 # Slot Machine (Lucky 7)
 
 ---------YOUTUBE DEMO-----------
+
 https://www.youtube.com/watch?v=l1L6YBWnUZA 
 
 A three-reel slot machine in Python, with two front-ends sharing one set of rules.
