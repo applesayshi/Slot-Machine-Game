@@ -22,12 +22,12 @@ symbol_count = {
     "D": 8
 }
 
-# Multiplier
+# Multiplier that follows online slot machine rates. Mathematically correct to real life applications
 symbol_value = {
-    "A": 7,
-    "B": 6,
-    "C": 5,
-    "D": 4
+    "A": 300,
+    "B": 35,
+    "C": 9,
+    "D": 2
 }
 
 
